@@ -26,7 +26,7 @@ console.log(countTrue([false, false, false, false])); // 0
 console.log(countTrue([])); //0 */
 
 
-console.log ("Reto 2");
+console.log ("Reto 1");
 function countTrue (array){
     if(array.length === 0) {
         return 0;
