@@ -110,6 +110,9 @@ console.log(cambio(1));
 // Si hay 2 personas -> "user1 y user2 estan en linea"
 // Si hay n>2 personas, "user1 y n-1 mas estan en linea"
 
+console.log("Reto 7");
+
+
 ///////////////////////// Arrays
 
 // Encontrar el nombre de una sociedad secreta segun los datos de los nombres para cada integrante
