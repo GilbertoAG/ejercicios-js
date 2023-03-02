@@ -7,25 +7,6 @@ countTrue([]) ➞ 0
 // Regresar 0 si el array es vacio
 // usar recursion
 
-
-/* console.log ("Reto 1");
-function countTrue (array){ //funcion 
-    var count = 0;
-    for (var i = 0; i < array.length; i++){ //Contador for
-        if (array[i]){
-            count++;
-        }
-    }
-    return count;
-}
-
-
-//comprobacion
-console.log(countTrue([true, false, false, true, false])); //2
-console.log(countTrue([false, false, false, false])); // 0
-console.log(countTrue([])); //0 */
-
-
 console.log ("Reto 1");
 function countTrue (array){
     if(array.length === 0) {
