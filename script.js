@@ -7,7 +7,6 @@ countTrue([]) ➞ 0
 // Regresar 0 si el array es vacio
 // usar recursion
 
-
 console.log ("Reto 1");
 function countTrue (array){
     if(array.length === 0) {
