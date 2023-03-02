@@ -8,25 +8,7 @@ countTrue([]) ➞ 0
 // usar recursion
 
 
-/* console.log ("Reto 1");
-function countTrue (array){ //funcion 
-    var count = 0;
-    for (var i = 0; i < array.length; i++){ //Contador for
-        if (array[i]){
-            count++;
-        }
-    }
-    return count;
-}
-
-
-//comprobacion
-console.log(countTrue([true, false, false, true, false])); //2
-console.log(countTrue([false, false, false, false])); // 0
-console.log(countTrue([])); //0 */
-
-
-console.log ("Reto 2");
+console.log ("Reto 1");
 function countTrue (array){
     if(array.length === 0) {
         return 0;
@@ -68,17 +50,58 @@ console.log(mayorCD(1, 33));
 // Encontrar los primeros n elementos de la serie fibonacci
 // Usar recursion
 
+// WIP 
+// console.log("Reto 3");
+// function fibonacci(n){
+//     if(n <= 0){
+//         return 0;
+//     }else if(n == 1){
+//         return 1;
+//     }else{
+//         return fibonacci(n - 1) + fibonacci(n - 2);
+//     }
+// }
+
+// //Comprobacion
+// console.log(fibonacci(0));
+// console.log(fibonacci(1));
+// console.log(fibonacci(1));
+// console.log(fibonacci(2));
+// console.log(fibonacci(3));
+
+
+
 // Encontrar el numero n de una figura piramidal triangular (tetrahedron)
 // (nivel) -> cantidad de numeritos
+
+/* console.log("reto 4");
+function tetrahedron */
 
 // Crear una funcion que tome el nombre de un pais y su area
 // (nombre, a)
 // Debe regresar la proporcion del area del pais en acorde a el area de tierra en el planeta
 //('Russia', 17098242) -> Russia is 11.48%
 // ("USA", 9372610) -> "USA is 6.29
+console.log("Reto 5");
+function aPais (nombre, a){
+    var proporcion = (a / 148940000) * 100;
+    return nombre + " is " + proporcion.toFixed(2) + "%";
+}
+
+//Comprobacion
+console.log(aPais('Russia', 17098242)); //Russia is 11.48%
+console.log(aPais("USA", 9372610)); //USA is 6.29
 
 // Escribir una funcion que retorne 0 si el input es 1 y 1 si el input es 0
 // No se pueden utilizar condicionales, ternarios, negaciones ni operatores bit
+console.log("Reto 6");
+function cambio(input){
+    return Math.abs(input- 1);
+}
+
+//Comprobacion
+console.log(cambio(0));
+console.log(cambio(1));
 
 // Messenger bzzz
 // (0 ) n
