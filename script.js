@@ -109,7 +109,26 @@ console.log(cambio(1));
 // Si hay 2 personas -> "user1 y user2 estan en linea"
 // Si hay n>2 personas, "user1 y n-1 mas estan en linea"
 
-console.log("Reto 7");
+ console.log("Reto 7");
+
+function bzzz(n){
+    if(n == 0){
+        return "No hay nadie en linea";
+    }else if (n == 1){
+        return users[0] + " esta en linea";
+    }else if (n == 2){
+        return users[0] + " y " + users [1] + " estan en linea";
+    }else {
+        return users[0] + " y " + (n-1) + " mas estan en linea";
+    }
+}
+
+const users = ["user1", "user2"];
+console.log(bzzz(0));
+console.log(bzzz(1));
+console.log(bzzz(2));
+console.log(bzzz(7)); 
+
 
 
 ///////////////////////// Arrays
@@ -119,14 +138,59 @@ console.log("Reto 7");
 // secretName(['Phoebe', 'Ross', 'Chandler', 'Joey', 'Monica', 'Rachel']) -> CJMPRR
 // secretName(['Harry', 'Ron', 'Hermione']) -> HHR
 
+console.log("Reto 8");
+function secretName(array) {
+    let nombre = '';
+    for (let i = 0; i < array.length; i++){
+        nombre += array[i][0]; //cuando se utiliza el operador + para concatenar strings, JS ordena las letras alfabeticamente por defecto.
+        // nombre.push(array[i][0]); //De igual forma en caso de querer regresar los elementos en el orden original existe el metodo push y el metodo join para unirlos.
+    }
+    return nombre;
+    // return nombre.join('')
+
+}
+
+console.log(secretName(["Felipe", "Fer", "Zabdiel"])); //-> FFZ
+console.log(secretName(['Phoebe', 'Ross', 'Chandler', 'Joey', 'Monica', 'Rachel']));//-> CJMPRR
+console.log(secretName(['Harry', 'Ron', 'Hermione'])); //-> HHR
+
+
 // onlineStatus(['mockIng99', 'J0eyPunch', 'glassedFer']) -> 'mockIng99, J0eyPunch and one 1 more online'
+
+console.log("Reto 9");
+function onlineStatus (array) {
+    let online = '';
+    for (let i = 0; i < array.length; i++){
+        if (i === array.length - 1){
+            online += 'and one 1 more online';
+        } else {
+            online += array[i] + ', ';
+        }
+    }
+    return online;
+}
+
+
+console.log(onlineStatus(['mockIng99', 'J0eyPunch', 'glassedFer'])); //-> 'mockIng99, J0eyPunch and one 1 more online'
 
 // Crear una funcion que tome 2 parametros, (numero, longitud) y regrse un array de longitud cantidad de numeros multiplos del numero por parametro
 // arrayMultiplos(2, 10) -> [2, 4, 6, 8, 10, 12, 14, 16, 18, 20]
 // arrayMultiplos(17, 6) -> [17, 34, 51, 68, 85, 102]
 
+console.log("Reto 10");
 
+function arrayMultiplos (numero, longitud){
+    let arrayN = [];
+    for (let i = 0; i < longitud; i++){
+        arrayN[i]=numero*(i+1);
+    }
 
+    return arrayN;
+
+}
+
+console.log(arrayMultiplos(2, 10)) //-> [2, 4, 6, 8, 10, 12, 14, 16, 18, 20])
+console.log(arrayMultiplos(17, 6)) //-> [17, 34, 51, 68, 85, 102])
 
 // Escrbir una funcion que descubra si el array es dominante positivo
 // Un array es positivo dominante cuando la mayoria de sus elementos son positivos -> [1, -2, 55, 10]
