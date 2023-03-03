@@ -25,9 +25,6 @@ console.log(countTrue([false, false, false, false])); // 0
 console.log(countTrue([])); //0
 
 
-
-
-
 // Escribir una funcion para encontrar el mayor comun divisor de 2 numeros positivos enteros
 // Usar recursion
 
@@ -49,7 +46,7 @@ console.log(mayorCD(1, 33));
 // Encontrar los primeros n elementos de la serie fibonacci
 // Usar recursion
 
-// WIP 
+// WIP no he logrado que me salga
 // console.log("Reto 3");
 // function fibonacci(n){
 //     if(n <= 0){
@@ -73,8 +70,19 @@ console.log(mayorCD(1, 33));
 // Encontrar el numero n de una figura piramidal triangular (tetrahedron)
 // (nivel) -> cantidad de numeritos
 
-/* console.log("reto 4");
-function tetrahedron */
+console.log("reto 4");
+
+function tetrahedron(n){
+    if(n == 1){
+        return 1;
+    }else{
+        return n + tetrahedron(n-1);
+    }
+}
+//Comprobacion
+console.log(tetrahedron(10));
+console.log(tetrahedron(20));
+console.log(tetrahedron(30));
 
 // Crear una funcion que tome el nombre de un pais y su area
 // (nombre, a)
@@ -122,7 +130,7 @@ function bzzz(n){
         return users[0] + " y " + (n-1) + " mas estan en linea";
     }
 }
-
+//Comprobacion
 const users = ["user1", "user2"];
 console.log(bzzz(0));
 console.log(bzzz(1));
@@ -149,7 +157,7 @@ function secretName(array) {
     // return nombre.join('')
 
 }
-
+//Comprobacion
 console.log(secretName(["Felipe", "Fer", "Zabdiel"])); //-> FFZ
 console.log(secretName(['Phoebe', 'Ross', 'Chandler', 'Joey', 'Monica', 'Rachel']));//-> CJMPRR
 console.log(secretName(['Harry', 'Ron', 'Hermione'])); //-> HHR
@@ -170,7 +178,7 @@ function onlineStatus (array) {
     return online;
 }
 
-
+//Comprobacion
 console.log(onlineStatus(['mockIng99', 'J0eyPunch', 'glassedFer'])); //-> 'mockIng99, J0eyPunch and one 1 more online'
 
 // Crear una funcion que tome 2 parametros, (numero, longitud) y regrse un array de longitud cantidad de numeros multiplos del numero por parametro
@@ -189,6 +197,7 @@ function arrayMultiplos (numero, longitud){
 
 }
 
+//Comprobacion
 console.log(arrayMultiplos(2, 10)) //-> [2, 4, 6, 8, 10, 12, 14, 16, 18, 20])
 console.log(arrayMultiplos(17, 6)) //-> [17, 34, 51, 68, 85, 102])
 
@@ -196,6 +205,20 @@ console.log(arrayMultiplos(17, 6)) //-> [17, 34, 51, 68, 85, 102])
 // Un array es positivo dominante cuando la mayoria de sus elementos son positivos -> [1, -2, 55, 10]
 // positiveDom([-1, -3, -5, 4, 6767]) -> false
 
+console.log("Reto 11")
+function positiveDom(array){
+    let count = 0; 
+    for (let i = 0; i < array.length; i++){ //se cuenta la cantidad de elementos que sean positivos para luego realizar una comparacion entre la cantidad vs la mitad del tamano del arreglo
+        if (array [i] > 0)
+        count++;
+    }
+
+    return count > array.length /2; 
+}
+
+//Comprobacion
+console.log(positiveDom([1, -2, 55, 10])) //-> True
+console.log(positiveDom([-1, -3, -5, 4, 6767])) //-> false
 
 // Promedio antipode
 // Dado un array, devolver un array de menor longitud de acuerdo a los siguentes pasos:
@@ -203,3 +226,29 @@ console.log(arrayMultiplos(17, 6)) //-> [17, 34, 51, 68, 85, 102])
 // - Sumar cada numero de la primera parte con los numeros inversos de la segunda parte
 // [1,2,3] [5,22,6] -> 1 + 6, 2 + 22, 3 + 5 -> [7, 24, 8]
 // - Dividir cada numero del array final entre 2  -> [3.5, 12, 4]
+
+console.log("Reto 12")
+function antipode(arr) {
+    // Paso 1: dividir el array en dos partes iguales (o eliminar el elemento medio)
+    const halfLength = Math.floor(arr.length / 2);
+    if (arr.length % 2 !== 0) {
+      arr.splice(halfLength, 1);
+    }
+    const arr1 = arr.slice(0, halfLength);
+    const arr2 = arr.slice(halfLength);
+  
+    // Paso 2: sumar cada número de la primera parte con los números inversos de la segunda parte
+    const arr3 = [];
+    for (let i = 0; i < arr1.length; i++) {
+      arr3.push(arr1[i] + arr2[arr2.length - i - 1]);
+    }
+  
+    // Paso 3: dividir cada número del array final entre 2
+    for (let i = 0; i < arr3.length; i++) {
+      arr3[i] /= 2;
+    }
+    return arr3;
+  }
+
+//Comprobacion
+console.log(antipode([1,2,3,5,22,6]))
